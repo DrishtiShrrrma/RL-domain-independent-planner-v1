@@ -1,3 +1,11 @@
+# Checklist
+
+- Make sure that all the required packages are mentioned in requirements.txt + imports are in place
+- Agent - imported correctly!
+- agent.learn ---> check args
+
+
+
 # RDDL-demo-agent
 RDDL docker demo agent for the 2023 IPPC
 
