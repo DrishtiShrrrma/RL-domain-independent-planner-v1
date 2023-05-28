@@ -10,4 +10,6 @@ Core Idea = PPO + some model-based algo + auto-tuning
 - PPO can be used in environments with discrete or continuous action spaces, and it's generally easier to apply because it doesn't require designing a cost function like LQR or MPC.
 
 
-
+# Why not LQR and MPC?
+- LQR (Linear Quadratic Regulator) and MPC (Model Predictive Control) are model-based methods that require a good model of the environment. 
+- LQR assumes that the dynamics of the environment are linear and the cost function is quadratic - also assumes that the system is fully observable, which might not be the case always.
