@@ -13,7 +13,7 @@ class MyRDDLAgent:
         self.model = PPO("MlpPolicy", self.action_space, verbose=1)
 
     def train(self, total_timesteps=10000):
-        self.model.learn(total_timesteps=total_timesteps)
+        self.model.learn(total_timesteps=total_timesteps)    #check this (HF)
 
     def sample_action(self, state=None):
         # Instead of sampling random actions, we will now get actions from our trained model
