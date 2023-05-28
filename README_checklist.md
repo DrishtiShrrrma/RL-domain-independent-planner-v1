@@ -4,7 +4,8 @@
 - Agent - imported correctly!
 - agent.learn ---> check args
 - Action spaces and observation spaces for environments should be carefully defined and passed to the MyRDDLAgent - ensure that the PPO model's policy is compatible with these spaces
-- I may need to preprocess the observations from the environment or postprocess the actions from the model to make them compatible with each other.
+- Might need to preprocess the observations from the environment or postprocess the actions from the model to make them compatible with each other.
+-  PPO require a reward signal to learn effectively -  need to ensure that environments provide a suitable reward signal that encourages the desired behavior.
 
 
 
