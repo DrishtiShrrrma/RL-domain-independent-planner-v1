@@ -15,7 +15,7 @@ class MyRDDLAgent:
     def train(self, total_timesteps=10000):
         self.model.learn(total_timesteps=total_timesteps)    #check this (HF)
 
-    def sample_action(self, state=None):
+    def sample_action(self, state=None):    #check for state bit
         # Instead of sampling random actions, we will now get actions from our trained model
         action, _states = self.model.predict(state)
         return action
