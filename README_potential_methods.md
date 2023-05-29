@@ -10,3 +10,7 @@ PPO + Actor Critic?
 4. Learning Domain-Independent Features: learn a set of features or representations that capture the essential dynamics of a wide range of domains. This might involve developing novel network architectures or learning algorithms. (Might be future work!)
 5. Understanding and Improving Exploration: Studying the role of exploration in domain-independent planning and developing methods to improve it.
 
+
+
+
+![image](https://github.com/DrishtiShrrrma/domain-independent-planner-v1/assets/129742046/4b8652a5-ad69-459c-a01f-bb053c822475)
