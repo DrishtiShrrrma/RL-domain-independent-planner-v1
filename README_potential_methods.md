@@ -1,5 +1,5 @@
 
-Core Idea = PPO + some model-based algo + auto-tuning
+Core Idea = PPO + some model-based algo + auto-tuning (incorporate TPEPruner to prevent early stopping?)
 
 PPO + Actor Critic?
 
