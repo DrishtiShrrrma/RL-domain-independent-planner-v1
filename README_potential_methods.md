@@ -1,6 +1,8 @@
 
 Core Idea = PPO + some model-based algo + auto-tuning
 
+PPO + Actor Critic?
+
 
 1. Hybrid: PPO for the high-level decision-making, but incorporate elements of model-based planning for lower-level tasks.
 2. Automatic Hyperparameter Tuning: Optuna/ray-tuning?
