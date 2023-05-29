@@ -16,3 +16,18 @@ Core Idea = PPO + some model-based algo + auto-tuning
 - MPC is more flexible than LQR and can handle non-linear dynamics and non-quadratic cost functions. However, MPC needs to solve an optimization problem at each step, which can be computationally expensive. Also, the performance of MPC depends heavily on the quality of the model and the cost function.
 
 Given the diverse set of environments we have, a model-free RL algorithm like PPO might be more suitable because it doesn't require a model of the environment and can handle both discrete and continuous actions. 
+
+
+# 2. PPO Vs A3C
+
+**PPO : **
+- Relatively simple to implement and tune, and has fewer hyperparameters compared to A3C.
+- It is sample-efficient and often produces stable results without the need for finely tuned hyperparameters.
+- It typically requires less parallel computation resources than A3C.
+
+**A3C :**
+- A3C can potentially learn faster than PPO due to its parallel architecture, as it learns from multiple different environments simultaneously.
+- It often requires careful tuning of hyperparameters and the balancing of multiple parallel environments to get optimal results.
+- **A3C often results in less stable training than PPO, as updates from different environments can interfere with each other - hyperparameter tuning could make A3C a more viable choice in some cases
+- 
+**
