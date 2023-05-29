@@ -4,7 +4,7 @@ Core Idea = PPO + some model-based algo + auto-tuning
 
 # 1. PPO
 - Proposed by OpenAI
-- An on-policy algorithm - improvement of policy gradient methods
+- An on-policy algorithm - improvement of policy gradient methods - combines the benefits of both on-policy and off-policy algorithms (CONTRADICTORY - check!)
 - Does not require a value function approximation, instead, it optimizes the policy directly.
 - Model-free RL algo - does not need a model of the environment to learn a policy.
 - PPO can be used in environments with discrete or continuous action spaces, and it's generally easier to apply because it doesn't require designing a cost function like LQR or MPC.
@@ -29,5 +29,6 @@ Given the diverse set of environments we have, a model-free RL algorithm like PP
 - A3C can potentially learn faster than PPO due to its parallel architecture, as it learns from multiple different environments simultaneously.
 - It often requires careful tuning of hyperparameters and the balancing of multiple parallel environments to get optimal results.
 - **A3C often results in less stable training than PPO, as updates from different environments can interfere with each other - hyperparameter tuning could make A3C a more viable choice in some cases
-- 
-**
+
+
+# 
