@@ -1,7 +1,6 @@
 
 Core Idea = PPO + some model-based algo + auto-tuning (incorporate TPEPruner/SuccessiveHalvingPruner to prevent early stopping?)
 
-PPO + Actor Critic?
 
 
 1. Hybrid: PPO for the high-level decision-making, but incorporate elements of model-based planning for lower-level tasks.
