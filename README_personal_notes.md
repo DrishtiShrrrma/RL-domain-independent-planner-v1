@@ -65,3 +65,6 @@ agent.train(total_timesteps=10000)  # Or however many timesteps you want to trai
 agent.save("path_to_your_model_weights.pkl")
 
  
+### PPO
+
+The PPO (Proximal Policy Optimization) algorithm inherently uses an Actor-Critic architecture. It employs two separate networks - the actor, which suggests the next action to take given a state, and the critic, which estimates the value function of being in a state. The critic helps to reduce the variance of the expected return, making the learning process more stable.
