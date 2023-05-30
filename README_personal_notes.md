@@ -42,17 +42,25 @@ main.py:
 
 try:
     ################################################################
+    
     # Initialize your agent here:
+    
     agent = MyRDDLAgent(myEnv, model_path="path_to_your_model_weights.pkl")
+    
     ################################################################
+
 except:
     ...
 
 
 
 In a separate script train it using - 
+
 env = # Your environment initialization here
+
 agent = MyRDDLAgent(env)
+
 agent.train(total_timesteps=10000)  # Or however many timesteps you want to train for
+
 agent.save("path_to_your_model_weights.pkl")
  
