@@ -6,7 +6,7 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.envs import DummyVecEnv
 
 class MyRDDLAgent:
-    def __init__(self, action_space, num_actions=1, seed=None, env=None):
+    def __init__(self, action_space, num_actions=1, seed=None, env=None, epsilon=0.1):
         self.action_space = action_space
         self.num_actions = num_actions
         self.env = DummyVecEnv([lambda: env])  # PPO requires a vectorized environment
