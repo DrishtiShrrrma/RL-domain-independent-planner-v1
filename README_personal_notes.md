@@ -45,7 +45,7 @@ try:
     
     # Initialize your agent here:
     
-    agent = MyRDDLAgent(myEnv, model_path="path_to_your_model_weights.pkl")
+    agent = MyRDDLAgent(myEnv, model_path="path_to_model_weights.pkl")
     
     ################################################################
 
