@@ -38,7 +38,7 @@ Given the diverse set of environments we have, a model-free RL algorithm like PP
 - PPO-GAE combines the advantages of policy optimization (PPO) with value estimation (Actor-Critic) to achieve more stable and efficient training.
 - In PPO-GAE, the value function is used to estimate the advantage values, which are then used to update the policy. This combination helps in reducing variance and improving the learning process.
 - In GAE, there's a hyperparameter named lambda (λ) which is used for trading-off bias vs variance in advantage estimation. This hyperparameter typically varies between 0 and 1. A value of 0 leads to high bias/low variance (one-step TD) estimates, and a value of 1 leads to low bias/high variance (Monte Carlo) estimates.
-- 
+- gae_lambda represents the trade-off between bias and variance for Generalized Advantage Estimation.
 
 Note : stable_baselines3's PPO implementation already includes GAE. So unless one needs to modify the GAE calculation, one should be fine with the basic implementation of PPO. If we do need to modify GAE, then we will have to write your own custom environment and agent that allows for the necessary modifications.
 
