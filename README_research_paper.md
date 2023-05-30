@@ -1,5 +1,5 @@
 
-Core Idea = PPO + some model-based algo + auto-tuning
+Core Idea = PPO + some model-based algo + auto-tuning?
 
 
 # 1. PPO
@@ -22,7 +22,7 @@ Given the diverse set of environments we have, a model-free RL algorithm like PP
 
 # 2. PPO Vs A3C
 
-**PPO : **
+**PPO :**
 - Relatively simple to implement and tune, and has fewer hyperparameters compared to A3C.
 - It is sample-efficient and often produces stable results without the need for finely tuned hyperparameters.
 - It typically requires less parallel computation resources than A3C.
