@@ -20,3 +20,27 @@ class MyRDDLAgent:
         action, _states = self.model.predict(state)
         return action
 
+
+
+
+"""import numpy as np
+from stable_baselines3 import PPO
+from stable_baselines3.common.envs import DummyVecEnv
+
+class MyRDDLAgent:
+    def __init__(self, env, model_path=None):
+        self.env = DummyVecEnv([lambda: env])  # Stable Baselines3 requires vectorized environments
+        self.model = PPO("MlpPolicy", self.env, verbose=1)
+        if model_path is not None:
+            self.model.load(model_path)
+            
+    def train(self, total_timesteps=10000):
+        self.model.learn(total_timesteps=total_timesteps)
+    
+    def save(self, model_path):
+        self.model.save(model_path)
+
+    def sample_action(self, state=None):
+        action, _ = self.model.predict(state, deterministic=True)
+        return action
+"""
