@@ -4,6 +4,7 @@
 
 !pip install -r requirements.txt
 
+Uncomment --> sys.path.append('/content/pyRDDLGym') in the main.py file - when running tests in Colab
 
 
 Reuirements.txt ---> 2nd file
