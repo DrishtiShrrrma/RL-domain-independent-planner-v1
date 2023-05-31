@@ -73,3 +73,9 @@ The PPO (Proximal Policy Optimization) algorithm inherently uses an Actor-Critic
 
 ### PPO-GAE
 To compare different settings of gae_lambda to see how much GAE affects the performance - create two agents, one with gae_lambda set to 1 (which is equivalent to not using GAE, or a high bias towards immediate rewards) and the other with gae_lambda set to a value less than 1 (indicating the use of GAE).
+
+
+
+Stable-baselines3 PPO
+
+![image](https://github.com/DrishtiShrrrma/domain-independent-planner-v1/assets/129742046/4b8652a5-ad69-459c-a01f-bb053c822475)
