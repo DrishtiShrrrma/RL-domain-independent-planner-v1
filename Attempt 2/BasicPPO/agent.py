@@ -1,6 +1,6 @@
 import torch
 from stable_baselines3 import PPO
-from stable_baselines3.common.envs import DummyVecEnv
+from stable_baselines3.common.vec_env import DummyVecEnv
 
 class MyRDDLAgent:
     def __init__(self, action_space, num_actions=1, seed=None, env=None):
