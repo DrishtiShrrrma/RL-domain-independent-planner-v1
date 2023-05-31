@@ -9,6 +9,11 @@ Uncomment --> sys.path.append('/content/pyRDDLGym') in the main.py file and chan
 _ _init_ _ file should be inside the directory
 
 
+
+![image](https://github.com/DrishtiShrrrma/domain-independent-planner-v1/assets/129742046/58ba6b03-4465-49e5-bff5-fd2ddf6b6a20)
+
+
+
 Reuirements.txt ---> 2nd file
 !pip install -r requirements.txt
 
