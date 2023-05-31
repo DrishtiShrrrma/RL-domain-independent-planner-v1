@@ -68,3 +68,8 @@ agent.save("path_to_your_model_weights.pkl")
 ### PPO
 
 The PPO (Proximal Policy Optimization) algorithm inherently uses an Actor-Critic architecture. It employs two separate networks - the actor, which suggests the next action to take given a state, and the critic, which estimates the value function of being in a state. The critic helps to reduce the variance of the expected return, making the learning process more stable.
+
+
+
+### PPO-GAE
+To compare different settings of gae_lambda to see how much GAE affects the performance - create two agents, one with gae_lambda set to 1 (which is equivalent to not using GAE, or a high bias towards immediate rewards) and the other with gae_lambda set to a value less than 1 (indicating the use of GAE).
