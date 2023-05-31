@@ -6,7 +6,7 @@
 
 Uncomment --> sys.path.append('/content/pyRDDLGym') in the main.py file and change the path to sys.path.append('/content/pyRDDLGym') - while running tests in Colab
 
-__init__ file should be inside the directory
+_ _init_ _ file should be inside the directory
 
 
 Reuirements.txt ---> 2nd file
