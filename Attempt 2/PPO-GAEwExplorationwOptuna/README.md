@@ -1,1 +1,4 @@
 - The PPO model in stable-baselines3 uses an actor-critic method, where the actor (policy) is stochastic and allows for exploration, and the critic estimates the value function. 
+- The deterministic=True flag during the predict function call determines whether to return the deterministic action (mean for Gaussian policies, max for discrete) or a stochastic action sample.
+- To explicitly include an epsilon-greedy strategy - modify the sample_action method. However, this is not a standard practice when using actor-critic methods like PPO, as the policy is already designed to balance exploration and exploitation.
+- To force more exploration during training - adjust the entropy coefficient when creating the PPO model. A higher entropy coefficient encourages the policy to be more random, which can improve exploration at the cost of making the policy less focused.
