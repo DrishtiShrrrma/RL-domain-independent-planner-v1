@@ -52,4 +52,3 @@ class MyRDDLAgent:
 
         mean_reward, _ = evaluate_policy(model, env, n_eval_episodes=10)
         return mean_reward
-
