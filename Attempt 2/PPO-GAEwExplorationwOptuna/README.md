@@ -1,0 +1,1 @@
+- The PPO model in stable-baselines3 uses an actor-critic method, where the actor (policy) is stochastic and allows for exploration, and the critic estimates the value function. 
