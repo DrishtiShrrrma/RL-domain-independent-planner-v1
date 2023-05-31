@@ -4,7 +4,7 @@
 
 !pip install -r requirements.txt
 
-Uncomment --> sys.path.append('/content/pyRDDLGym') in the main.py file and change the path to sys.path.append('/content/pyRDDLGym') - while running tests in Colab
+Uncomment --> sys.path.append('/home/test/pyRDDLGym') in the main.py file and change the path to sys.path.append('/content/pyRDDLGym') - while running tests in Colab
 
 _ _init_ _ file should be inside the directory
 
