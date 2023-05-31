@@ -1,3 +1,10 @@
+!git clone https://github.com/ataitler/pyRDDLGym.git
+%cd /content/pyRDDLGym
+!pip install -r requirements.txt
+
+
+
+
 !pip install -r requirements.txt
 
 
