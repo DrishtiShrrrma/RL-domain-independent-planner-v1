@@ -1,0 +1,915 @@
+2023-05-31 23:31:31.801836: initializing pvariable tensors:
+	ADJ-ZONES['zone', 'zone'], shape=(2, 2), dtype=bool
+	TEMP-OUT[], shape=(), dtype=float64
+	ADJ-HEATER['heater', 'zone'], shape=(2, 2), dtype=bool
+	AIR-COST[], shape=(), dtype=float64
+	HEAT-COST['heater'], shape=(2,), dtype=float64
+	ZONE-DISCOMFORT-PENALTY[], shape=(), dtype=float64
+	TEMP-ZONE-MIN[], shape=(), dtype=float64
+	TEMP-ZONE-MAX[], shape=(), dtype=float64
+	OUT-AIR-FLOW[], shape=(), dtype=float64
+	ZONE-VOL['zone'], shape=(2,), dtype=float64
+	HEATER-VOL['heater'], shape=(2,), dtype=float64
+	K[], shape=(), dtype=float64
+	K-dz[], shape=(), dtype=float64
+	K-dh[], shape=(), dtype=float64
+	DELTA-T[], shape=(), dtype=float64
+	SIGMA['zone'], shape=(2,), dtype=float64
+	P-SWITCH['zone'], shape=(2,), dtype=float64
+	temp-1['heater'], shape=(2,), dtype=float64
+	temp-zone['zone'], shape=(2,), dtype=float64
+	temp-zone'['zone'], shape=(2,), dtype=float64
+	temp-heater['heater'], shape=(2,), dtype=float64
+	temp-heater'['heater'], shape=(2,), dtype=float64
+	occupied['zone'], shape=(2,), dtype=bool
+	occupied'['zone'], shape=(2,), dtype=bool
+	fan-in['zone'], shape=(2,), dtype=float64
+	heat-input['heater'], shape=(2,), dtype=float64
+
+2023-05-31 23:31:31.802484: computed fluent dependencies in CPFs:
+	next-state-fluent occupied': {occupied}
+	interm-fluent temp-1: {fan-in, temp-zone}
+	next-state-fluent temp-heater': {temp-heater, heat-input, temp-1, fan-in}
+	next-state-fluent temp-zone': {temp-heater, fan-in, temp-zone}
+
+2023-05-31 23:31:31.802520: computed order of CPF evaluation:
+	0: {temp-zone', temp-1, occupied'}
+	1: {temp-heater'}
+
+2023-05-31 23:31:31.802662: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e8b7eb0>
+	variable                =occupied
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.802797: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e8b7d30>
+	variable                =P-SWITCH
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.802905: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e8b77f0>
+	variable                =ADJ-HEATER
+	variable evaluated at   =[('?h', 'heater'), ('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.802938: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z', 'zone'))]
+	free object(s) in outer scope =[('?h', 'heater')]
+	free object(s) in inner scope =[('?h', 'heater'), ('?z', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.803042: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b8cd0>
+	variable                =ADJ-HEATER
+	variable evaluated at   =[('?h', 'heater'), ('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.803075: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z', 'zone'))]
+	free object(s) in outer scope =[('?h', 'heater')]
+	free object(s) in inner scope =[('?h', 'heater'), ('?z', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.803258: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b9210>
+	variable                =temp-zone
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.803377: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b8be0>
+	variable                =TEMP-OUT
+	variable evaluated at   =[]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(0, 1)
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.803473: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b94b0>
+	variable                =temp-zone
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.803537: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b9300>
+	variable                =OUT-AIR-FLOW
+	variable evaluated at   =[]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(0, 1)
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.803616: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b9690>
+	variable                =fan-in
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.803717: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b9750>
+	variable                =ADJ-HEATER
+	variable evaluated at   =[('?h', 'heater'), ('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.803757: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z', 'zone'))]
+	free object(s) in outer scope =[('?h', 'heater')]
+	free object(s) in inner scope =[('?h', 'heater'), ('?z', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.803842: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b88b0>
+	variable                =K-dh
+	variable evaluated at   =[]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.803915: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b93f0>
+	variable                =temp-heater
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.804016: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b96c0>
+	variable                =ADJ-HEATER
+	variable evaluated at   =[('?h', 'heater'), ('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.804069: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z', 'zone'))]
+	free object(s) in outer scope =[('?h', 'heater')]
+	free object(s) in inner scope =[('?h', 'heater'), ('?z', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.804156: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b9a80>
+	variable                =temp-heater
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.804280: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b9ae0>
+	variable                =DELTA-T
+	variable evaluated at   =[]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.804476: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b9d50>
+	variable                =HEATER-VOL
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.804716: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba170>
+	variable                =ADJ-HEATER
+	variable evaluated at   =[('?h', 'heater'), ('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.804975: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba1d0>
+	variable                =fan-in
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.805038: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z', 'zone'))]
+	free object(s) in outer scope =[('?h', 'heater')]
+	free object(s) in inner scope =[('?h', 'heater'), ('?z', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.805190: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b9f30>
+	variable                =ADJ-HEATER
+	variable evaluated at   =[('?h', 'heater'), ('?z', 'zone')]
+	free object(s) in scope =[('?h', 'heater'), ('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.805261: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z', 'zone'))]
+	free object(s) in outer scope =[('?h', 'heater')]
+	free object(s) in inner scope =[('?h', 'heater'), ('?z', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.805371: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba2c0>
+	variable                =temp-1
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.805568: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b9ff0>
+	variable                =TEMP-OUT
+	variable evaluated at   =[]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.805742: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b99c0>
+	variable                =DELTA-T
+	variable evaluated at   =[]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.805862: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba260>
+	variable                =K
+	variable evaluated at   =[]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.805999: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba6b0>
+	variable                =HEATER-VOL
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.806203: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba710>
+	variable                =heat-input
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.806400: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba770>
+	variable                =temp-heater
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.806593: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba5f0>
+	variable                =DELTA-T
+	variable evaluated at   =[]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.806765: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba800>
+	variable                =K
+	variable evaluated at   =[]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.806840: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bab30>
+	variable                =HEATER-VOL
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.806930: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bab90>
+	variable                =heat-input
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.807043: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7b89d0>
+	variable                =K-dz
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.807121: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bab00>
+	variable                =temp-zone
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.807184: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba530>
+	variable                =TEMP-OUT
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.807356: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bad10>
+	variable                =ADJ-HEATER
+	variable evaluated at   =[('?h', 'heater'), ('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.807394: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?h', 'heater'))]
+	free object(s) in outer scope =[('?z', 'zone')]
+	free object(s) in inner scope =[('?z', 'zone'), ('?h', 'heater')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.807474: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bb040>
+	variable                =temp-zone
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.807542: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bb0a0>
+	variable                =DELTA-T
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.807608: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bb370>
+	variable                =ZONE-VOL
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.807716: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bb430>
+	variable                =ADJ-HEATER
+	variable evaluated at   =[('?h', 'heater'), ('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.807772: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?h', 'heater'))]
+	free object(s) in outer scope =[('?z', 'zone')]
+	free object(s) in inner scope =[('?z', 'zone'), ('?h', 'heater')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.807844: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bb610>
+	variable                =fan-in
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.807940: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bb9d0>
+	variable                =temp-heater
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?z', 'zone'), ('?h', 'heater')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.808004: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bbaf0>
+	variable                =temp-zone
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?h', 'heater')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.808082: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bbc70>
+	variable                =ADJ-HEATER
+	variable evaluated at   =[('?h', 'heater'), ('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.808115: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?h', 'heater'))]
+	free object(s) in outer scope =[('?z', 'zone')]
+	free object(s) in inner scope =[('?z', 'zone'), ('?h', 'heater')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.808177: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7baf80>
+	variable                =DELTA-T
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.808281: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bbdf0>
+	variable                =ZONE-VOL
+	variable evaluated at   =[('?z2', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.808370: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bbf10>
+	variable                =ZONE-VOL
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.808443: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bbfd0>
+	variable                =SIGMA
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.808547: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bbf40>
+	variable                =temp-zone
+	variable evaluated at   =[('?z2', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.808611: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bb760>
+	variable                =temp-zone
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.808697: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bbe80>
+	variable                =ADJ-ZONES
+	variable evaluated at   =[('?z', 'zone'), ('?z2', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.808778: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bc4f0>
+	variable                =ADJ-ZONES
+	variable evaluated at   =[('?z2', 'zone'), ('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.808815: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z2', 'zone'))]
+	free object(s) in outer scope =[('?z', 'zone')]
+	free object(s) in inner scope =[('?z', 'zone'), ('?z2', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.808876: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bb3d0>
+	variable                =temp-zone
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.808935: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7baec0>
+	variable                =DELTA-T
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.809025: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bc730>
+	variable                =ZONE-VOL
+	variable evaluated at   =[('?z2', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.809089: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bc850>
+	variable                =ZONE-VOL
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.809172: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bc910>
+	variable                =SIGMA
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.809271: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bca30>
+	variable                =temp-zone
+	variable evaluated at   =[('?z2', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.809338: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bcb50>
+	variable                =temp-zone
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =(1,)
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.809408: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bccd0>
+	variable                =ADJ-ZONES
+	variable evaluated at   =[('?z', 'zone'), ('?z2', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.809484: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bcdf0>
+	variable                =ADJ-ZONES
+	variable evaluated at   =[('?z2', 'zone'), ('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone'), ('?z2', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2, 2)
+	transform operation     =1 with argument(s) (1, 0)
+
+2023-05-31 23:31:31.809521: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z2', 'zone'))]
+	free object(s) in outer scope =[('?z', 'zone')]
+	free object(s) in inner scope =[('?z', 'zone'), ('?z2', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(1,)
+
+2023-05-31 23:31:31.809606: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bab60>
+	variable                =HEAT-COST
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.809695: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bcc40>
+	variable                =heat-input
+	variable evaluated at   =[('?h', 'heater')]
+	free object(s) in scope =[('?h', 'heater')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.809760: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?h', 'heater'))]
+	free object(s) in outer scope =[]
+	free object(s) in inner scope =[('?h', 'heater')]
+	aggregation operation         =sum
+	aggregation axes              =(0,)
+
+2023-05-31 23:31:31.809821: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bc9d0>
+	variable                =AIR-COST
+	variable evaluated at   =[]
+	free object(s) in scope =[]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =()
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.809919: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bd000>
+	variable                =fan-in
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.809971: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z', 'zone'))]
+	free object(s) in outer scope =[]
+	free object(s) in inner scope =[('?z', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(0,)
+
+2023-05-31 23:31:31.810032: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7ba890>
+	variable                =ZONE-DISCOMFORT-PENALTY
+	variable evaluated at   =[]
+	free object(s) in scope =[]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =()
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810112: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bd360>
+	variable                =occupied
+	variable evaluated at   =[('?z1', 'zone')]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810175: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bd4e0>
+	variable                =temp-zone
+	variable evaluated at   =[('?z1', 'zone')]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810237: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bd270>
+	variable                =TEMP-ZONE-MIN
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810308: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bd780>
+	variable                =temp-zone
+	variable evaluated at   =[('?z1', 'zone')]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810364: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bd5d0>
+	variable                =TEMP-ZONE-MIN
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810447: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bda20>
+	variable                =occupied
+	variable evaluated at   =[('?z1', 'zone')]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810511: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bdba0>
+	variable                =temp-zone
+	variable evaluated at   =[('?z1', 'zone')]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810586: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bd930>
+	variable                =TEMP-ZONE-MAX
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810656: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bde40>
+	variable                =temp-zone
+	variable evaluated at   =[('?z1', 'zone')]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810777: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bdc90>
+	variable                =TEMP-ZONE-MAX
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z1', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810853: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z1', 'zone'))]
+	free object(s) in outer scope =[]
+	free object(s) in inner scope =[('?z1', 'zone')]
+	aggregation operation         =sum
+	aggregation axes              =(0,)
+
+2023-05-31 23:31:31.810937: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bada0>
+	variable                =fan-in
+	variable evaluated at   =[('?z', 'zone')]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =()
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.810995: computing info for pvariable tensor transformation:
+	address of expression   =<pyRDDLGym.Core.Parser.expr.Expression object at 0x7f2f4e7bce50>
+	variable                =OUT-AIR-FLOW
+	variable evaluated at   =[]
+	free object(s) in scope =[('?z', 'zone')]
+	slice                   =()
+	new axes to append      =(0,)
+	broadcast shape         =(2,)
+	transform operation     =2 with argument(s) None
+
+2023-05-31 23:31:31.811027: computing object info for aggregation:
+	aggregation variables(s)      =[('typed_var', ('?z', 'zone'))]
+	free object(s) in outer scope =[]
+	free object(s) in inner scope =[('?z', 'zone')]
+	aggregation operation         =forall
+	aggregation axes              =(0,)
+
+2023-05-31 23:31:31.811459: computed simulation bounds:
+	temp-zone___z1: [-inf, inf]
+	temp-zone___z2: [-inf, inf]
+	temp-heater___h1: [-inf, inf]
+	temp-heater___h2: [-inf, inf]
+	occupied___z1: [-inf, inf]
+	occupied___z2: [-inf, inf]
+	fan-in___z1: [0.05, inf]
+	fan-in___z2: [0.05, inf]
+	heat-input___h1: [-inf, inf]
+	heat-input___h2: [-inf, inf]
+
