@@ -1,9 +1,10 @@
+stable-baselines3==2.0.0a5
 matplotlib>=3.5.0
 pillow>=9.2.0 
 gym>=0.24.0
 gymnasium[box2d]
+shimmy>=0.2.1
 numpy>=1.22
 optuna
-stable-baselines3==2.0.0a5
 pygame
 ply
