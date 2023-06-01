@@ -6,7 +6,7 @@ To do:
 
 Observation spaces: what agent can observe from the environment
 
-Action Spaces: Actions the agent can take
+Action Spaces: Actions the agent can take 
 
 
 
