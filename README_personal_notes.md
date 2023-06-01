@@ -79,3 +79,8 @@ To compare different settings of gae_lambda to see how much GAE affects the perf
 Stable-baselines3 PPO
 
 ![image](https://github.com/DrishtiShrrrma/domain-independent-planner-v1/assets/129742046/4b8652a5-ad69-459c-a01f-bb053c822475)
+
+Note: To load the saved model, you can use the load method provided by Stable Baselines:
+
+model = PPO.load("ppo_model.pkl")
+
