@@ -84,3 +84,4 @@ Note: To load the saved model - use the load method provided by Stable Baselines
 
 model = PPO.load("ppo_model.pkl")
 
+gym.spaces.dict.Dict ---> observation space is a dictionary - useful in situations where the observation is comprised of several different types of data that might not fit neatly into a traditional array or tensor format - one can handle a Dict space by processing each component of the dict individually.
