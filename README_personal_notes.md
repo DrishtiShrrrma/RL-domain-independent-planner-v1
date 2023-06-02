@@ -216,3 +216,6 @@ A2C (Advantage Actor-Critic): A2C is an on-policy algorithm that can work with c
 
 - SB3 does not support dictionary action spaces - build a wrapper around your environments to convert the dictionary action spaces into a format that SB3 can understand, such as a multi-discrete or multi-continuous action space.
 
+
+Potential workaround: flatten the dictionary action space into a single vector, either a Box or MultiDiscrete, and then unflatten the actions in the environment. 
+
