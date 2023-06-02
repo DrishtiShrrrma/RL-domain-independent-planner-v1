@@ -194,4 +194,6 @@ Action space: Dict('power-x___d1': Box(-0.1, 0.1, (1,), float32), 'power-x___d2'
 Shape of action space: None
 
 
+![image](https://github.com/DrishtiShrrrma/domain-independent-planner-v1/assets/129742046/4a0249b7-3f1b-454e-bec1-f2bafe0007ae)
+
 
