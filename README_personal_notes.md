@@ -127,68 +127,68 @@ This episode will continue with default actions!
 
 
 
-Action Spaces that domain-independent planner needs to handdle:
+**Action Spaces that domain-independent planner needs to handle:**
 
-RaceCar:
+**RaceCar:**
 
 Action space: Dict('fx': Box(-1.0, 1.0, (1,), float32), 'fy': Box(-1.0, 1.0, (1,), float32))
 Shape of action space: None
 
-UAV_mixed:
+**UAV_mixed:**
 
 Action space: Dict('set-acc___a1': Discrete(3, start=-1), 'set-phi___a1': Box(-1.0, 1.0, (1,), float32), 'set-theta___a1': Box(-1.0, 1.0, (1,), float32))
 Shape of action space: None
 
-UAV_discrete: 
+**UAV_discrete: **
 
 Action space: Dict('set-acc___a1': Discrete(3, start=-1), 'set-phi___a1': Discrete(3, start=-1), 'set-theta___a1': Discrete(3, start=-1))
 Shape of action space: None
 
-UAV_continuous:
+**UAV_continuous:**
 
 Action space: Dict('set-acc___a1': Box(-1.0, 1.0, (1,), float32), 'set-phi___a1': Box(-1.0, 1.0, (1,), float32), 'set-theta___a1': Box(-1.0, 1.0, (1,), float32))
 Shape of action space: None
 
 
-Reservoir_continuous:
+**Reservoir_continuous:**
 
 Action space: Dict('release___t1': Box(0.0, 100.0, (1,), float32), 'release___t2': Box(0.0, 100.0, (1,), float32), 'release___t3': Box(0.0, 100.0, (1,), float32))
 Shape of action space: None
 
 
-HVAC: 
+**HVAC: **
 
 Action space: Dict('fan-in___z1': Box(0.05, inf, (1,), float32), 'heat-input___h1': Box(-inf, inf, (1,), float32))
 Shape of action space: None
 
-Reservoir_discrete:
+**Reservoir_discrete:**
 
 Action space: Dict('release___t1': Discrete(2), 'release___t2': Discrete(2), 'release___t3': Discrete(2))
 Shape of action space: None
 
-RecSim:
-
+**RecSim:
+**
 Action space: Dict('recommend___c1__i1': Discrete(2), 'recommend___c1__i2': Discrete(2), 'recommend___c1__i3': Discrete(2), 'recommend___c1__i4': Discrete(2), 'recommend___c1__i5': Discrete(2), 'recommend___c2__i1': Discrete(2), 'recommend___c2__i2': Discrete(2), 'recommend___c2__i3': Discrete(2), 'recommend___c2__i4': Discrete(2), 'recommend___c2__i5': Discrete(2), 'recommend___c3__i1': Discrete(2), 'recommend___c3__i2': Discrete(2), 'recommend___c3__i3': Discrete(2), 'recommend___c3__i4': Discrete(2), 'recommend___c3__i5': Discrete(2), 'recommend___c4__i1': Discrete(2), 'recommend___c4__i2': Discrete(2), 'recommend___c4__i3': Discrete(2), 'recommend___c4__i4': Discrete(2), 'recommend___c4__i5': Discrete(2), 'recommend___c5__i1': Discrete(2), 'recommend___c5__i2': Discrete(2), 'recommend___c5__i3': Discrete(2), 'recommend___c5__i4': Discrete(2), 'recommend___c5__i5': Discrete(2))
 Shape of action space: None
 
 
-PowerGen_discrete:
+**PowerGen_discrete:**
 
 Action space: Dict('curProd___p1': Discrete(11), 'curProd___p2': Discrete(11), 'curProd___p3': Discrete(11))
 Shape of action space: None
 
-PowerGen_continuous:
+**PowerGen_continuous:**
 
 Action space: Dict('curProd___p1': Box(0.0, 10.0, (1,), float32), 'curProd___p2': Box(0.0, 10.0, (1,), float32), 'curProd___p3': Box(0.0, 10.0, (1,), float32))
 Shape of action space: None
 
-MountainCar:
+**MountainCar:**
 
 Action space: Dict('action': Box(-1.0, 1.0, (1,), float32))
 Shape of action space: None
 
 
-MarsRover:
+**MarsRover:**
 
 Action space: Dict('power-x___d1': Box(-0.1, 0.1, (1,), float32), 'power-x___d2': Box(-0.1, 0.1, (1,), float32), 'power-y___d1': Box(-0.1, 0.1, (1,), float32), 'power-y___d2': Box(-0.1, 0.1, (1,), float32), 'harvest___d1': Discrete(2), 'harvest___d2': Discrete(2))
 Shape of action space: None
