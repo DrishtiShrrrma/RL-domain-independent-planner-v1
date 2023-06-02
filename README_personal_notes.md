@@ -125,3 +125,50 @@ This episode will continue with default actions!
 ![image](https://github.com/DrishtiShrrrma/domain-independent-planner-v1/assets/129742046/ba2e4b3c-0398-4907-a495-7e0fb69f128f)
 
 
+
+
+Action Spaces that domain-independent planner needs to handdle:
+
+RaceCar:
+
+Action space: Dict('fx': Box(-1.0, 1.0, (1,), float32), 'fy': Box(-1.0, 1.0, (1,), float32))
+Shape of action space: None
+
+UAV_mixed:
+
+Action space: Dict('set-acc___a1': Discrete(3, start=-1), 'set-phi___a1': Box(-1.0, 1.0, (1,), float32), 'set-theta___a1': Box(-1.0, 1.0, (1,), float32))
+Shape of action space: None
+
+HVAC:
+
+Action space: Dict('set-acc___a1': Discrete(3, start=-1), 'set-phi___a1': Box(-1.0, 1.0, (1,), float32), 'set-theta___a1': Box(-1.0, 1.0, (1,), float32))
+Shape of action space: None
+
+UAV_contnuous:
+
+Action space: Dict('set-acc___a1': Box(-1.0, 1.0, (1,), float32), 'set-phi___a1': Box(-1.0, 1.0, (1,), float32), 'set-theta___a1': Box(-1.0, 1.0, (1,), float32))
+Shape of action space: None
+
+Elevators:
+
+Action space: Dict('move-current-dir___e0': Discrete(2), 'move-current-dir___e1': Discrete(2), 'open-door___e0': Discrete(2), 'open-door___e1': Discrete(2), 'close-door___e0': Discrete(2), 'close-door___e1': Discrete(2))
+Shape of action space: None
+
+Reservoir_continuous:
+
+Action space: Dict('release___t1': Box(0.0, 100.0, (1,), float32), 'release___t2': Box(0.0, 100.0, (1,), float32), 'release___t3': Box(0.0, 100.0, (1,), float32))
+Shape of action space: None
+
+PropDBN:
+
+Action space: Dict('a': Discrete(2))
+Shape of action space: None
+
+HVAC: 
+
+Action space: Dict('fan-in___z1': Box(0.05, inf, (1,), float32), 'heat-input___h1': Box(-inf, inf, (1,), float32))
+Shape of action space: None
+
+
+
+
