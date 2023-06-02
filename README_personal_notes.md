@@ -206,3 +206,12 @@ TD3 (Twin Delayed DDPG): Similar to SAC, TD3 also supports continuous action spa
 DQN (Deep Q-Network): While DQN primarily supports discrete action spaces, it can also handle Dict action spaces through a variant called DQNWithModel. It combines a DQN with a learned model of the environment dynamics.
 
 A2C (Advantage Actor-Critic): A2C is an on-policy algorithm that can work with continuous or discrete action spaces, including Dict action spaces. It combines actor-critic methods with the advantage function to improve learning.
+
+
+Note:
+For the action spaces with infinite bounds (e.g., the HVAC environment), many standard RL algorithms, including those in SB3, might struggle because these algorithms typically assume a normalized action space (usually between -1 and 1 or 0 and 1)- normalize these actions or apply a specific action handling strategy.
+
+For environments with a mix of discrete and continuous actions in the same action space (e.g., MarsRover) -  use hybrid action RL algorithms, but SB3 does not directly support mixed action spaces.
+
+SB3 does not support dictionary action spaces - build a wrapper around your environments to convert the dictionary action spaces into a format that SB3 can understand, such as a multi-discrete or multi-continuous action space.
+
