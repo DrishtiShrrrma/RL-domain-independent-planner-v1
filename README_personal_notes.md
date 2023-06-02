@@ -197,3 +197,12 @@ Shape of action space: None
 ![image](https://github.com/DrishtiShrrrma/domain-independent-planner-v1/assets/129742046/4a0249b7-3f1b-454e-bec1-f2bafe0007ae)
 
 
+For reinforcement learning algorithms in the stable_baselines3 library that support Dict action spaces directly, you can consider using the following algorithms:
+
+SAC (Soft Actor-Critic): This algorithm supports both continuous and discrete action spaces, including Dict action spaces. It is an off-policy algorithm suitable for continuous control tasks.
+
+TD3 (Twin Delayed DDPG): Similar to SAC, TD3 also supports continuous action spaces, including Dict action spaces. It is an off-policy algorithm known for its stability and performance.
+
+DQN (Deep Q-Network): While DQN primarily supports discrete action spaces, it can also handle Dict action spaces through a variant called DQNWithModel. It combines a DQN with a learned model of the environment dynamics.
+
+A2C (Advantage Actor-Critic): A2C is an on-policy algorithm that can work with continuous or discrete action spaces, including Dict action spaces. It combines actor-critic methods with the advantage function to improve learning.
